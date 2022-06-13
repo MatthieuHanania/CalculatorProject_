@@ -1,0 +1,47 @@
+[debug] Packaging D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\calculatorproject__2.12-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	main
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\main
+[debug] 	main\main$.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\main\main$.class
+[debug] 	main\main.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\main\main.class
+[debug] 	simpleGUI
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI
+[debug] 	simpleGUI\Canvas.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\Canvas.class
+[debug] 	simpleGUI\Dart$.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\Dart$.class
+[debug] 	simpleGUI\Dart.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\Dart.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$10.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$10.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$11$$anon$12.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$11$$anon$12.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$11.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$11.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$2.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$2.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$3.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$3.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$4.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$4.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$5.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$5.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$6.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$6.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$7.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$7.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$8.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$8.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anon$9.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anon$9.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1$$anonfun$1.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1$$anonfun$1.class
+[debug] 	simpleGUI\SimpleGUI$$anon$1.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$$anon$1.class
+[debug] 	simpleGUI\SimpleGUI$.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI$.class
+[debug] 	simpleGUI\SimpleGUI.class
+[debug] 	  D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes\simpleGUI\SimpleGUI.class
+[debug] Done packaging.
