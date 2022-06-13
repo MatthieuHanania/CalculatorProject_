@@ -1,20 +1,144 @@
 [debug] [zinc] IncrementalCompile -----------
 [debug] IncrementalCompile.incrementalCompile
-[debug] previous = Stamps for: 0 products, 0 sources, 0 libraries
-[debug] current source = Set(${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala)
-[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())
-[debug] Full compilation, no sources in previous analysis.
-[debug] all 4 sources are invalidated
-[debug] Initial set of included nodes: 
-[debug] Recompiling all sources: number of invalidated sources > 50.0% of all sources
+[debug] previous = Stamps for: 20 products, 4 sources, 2 libraries
+[debug] current source = Set(${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala, ${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala, ${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/exercice/Functions.scala), removed = Set(), changed = Set(${BASE}/src/main/scala/main/main.scala), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] 
+[debug] Initial source changes:
+[debug] 	removed: Set()
+[debug] 	added: Set(${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
+[debug] 	modified: Set(${BASE}/src/main/scala/main/main.scala)
+[debug] Invalidated products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set(main.main)
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All initially invalidated classes: Set(main.main)
+[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/exercice/Functions.scala, ${BASE}/src/main/scala/main/main.scala)
+[debug] Initial set of included nodes: main.main
 [debug] compilation cycle 1
-[info] compiling 4 Scala sources to D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes ...
+[info] compiling 3 Scala sources to D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes ...
 [debug] Getting org.scala-sbt:compiler-bridge_2.12:1.6.0:compile for Scala 2.12.15
-[debug] [zinc] Running cached compiler 40a20528 for Scala compiler version 2.12.15
+[debug] [zinc] Running cached compiler 6e12b325 for Scala compiler version 2.12.15
 [debug] [zinc] The Scala compiler is invoked with:
 [debug] 	-bootclasspath
 [debug] 	C:\Users\Matthieu\.sbt\boot\scala-2.12.15\lib\scala-library.jar
 [debug] 	-classpath
 [debug] 	D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-parser-combinators_2.12\2.1.1\scala-parser-combinators_2.12-2.1.1.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-swing_2.12\3.0.0\scala-swing_2.12-3.0.0.jar
-[debug] Scala compilation took 5.8039274 s
+[debug] Invalidating (transitively) by inheritance from exercice.Functions...
+[debug] Initial set of included nodes: exercice.Functions
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.Functions)
+[debug] The following modified names cause invalidation of main.main: [UsedName(Functions,[Default]), UsedName(showExpr,[Default])]
+[debug] Change NamesChange(exercice.Functions,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(eval,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(showExpr,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(wait,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(toString,[Default]), UsedName(Functions,[Default]), UsedName(eval$default$2,[Default]), UsedName(ne,[Default]))) invalidates 2 classes due to The exercice.Functions has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(eval,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(showExpr,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(wait,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(toString,[Default]), UsedName(Functions,[Default]), UsedName(eval$default$2,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.Functions)
+[debug]   > 
+[debug]   > by member reference: Set(main.main)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from main.main...
+[debug] Initial set of included nodes: main.main
+[debug] Invalidated by transitive inheritance dependency: Set(main.main)
+[debug] Change NamesChange(main.main,ModifiedNames(changes = UsedName(val1,[Default]))) invalidates 1 classes due to The main.main has the following regular definitions changed:
+[debug] 	UsedName(val1,[Default]).
+[debug]   > by transitive inheritance: Set(main.main)
+[debug]   > 
+[debug]   > 
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.sin...
+[debug] Initial set of included nodes: exercice.sin
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.sin)
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(sin,[Default]), UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(val1,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.sin,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(sin,[Default]), UsedName(toString,[Default]), UsedName(exercice;sin;init;,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 2 classes due to The exercice.sin has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(sin,[Default]), UsedName(toString,[Default]), UsedName(exercice;sin;init;,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.sin)
+[debug]   > 
+[debug]   > by member reference: Set(exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.Numbers...
+[debug] Initial set of included nodes: exercice.Numbers
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.Numbers)
+[debug] The following modified names cause invalidation of main.main: [UsedName(Numbers,[Default]), UsedName(apply,[Default])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(Numbers,[Default]), UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(value,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.Numbers,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(value,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(exercice;Numbers;init;,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(Numbers,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 3 classes due to The exercice.Numbers has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(value,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(exercice;Numbers;init;,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(Numbers,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.Numbers)
+[debug]   > 
+[debug]   > by member reference: Set(main.main, exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.cos...
+[debug] Initial set of included nodes: exercice.cos
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.cos)
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(cos,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(val2,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.cos,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(exercice;cos;init;,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(cos,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 2 classes due to The exercice.cos has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(compose,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(andThen,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(exercice;cos;init;,[Default]), UsedName(apply,[Default]), UsedName(wait,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(cos,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.cos)
+[debug]   > 
+[debug]   > by member reference: Set(exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.X...
+[debug] Initial set of included nodes: exercice.X
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.X)
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(X,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.X,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(X,[Default]), UsedName(wait,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 2 classes due to The exercice.X has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(X,[Default]), UsedName(wait,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.X)
+[debug]   > 
+[debug]   > by member reference: Set(exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.mul...
+[debug] Initial set of included nodes: exercice.mul
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.mul)
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(mul,[Default]), UsedName(isInstanceOf,[Default]), UsedName(val1,[Default]), UsedName(val2,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.mul,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(exercice;mul;init;,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(curried,[Default]), UsedName(wait,[Default]), UsedName(mul,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(copy$default$2,[Default]), UsedName(clone,[Default]), UsedName(tupled,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 2 classes due to The exercice.mul has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(exercice;mul;init;,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(curried,[Default]), UsedName(wait,[Default]), UsedName(mul,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(copy$default$2,[Default]), UsedName(clone,[Default]), UsedName(tupled,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.mul)
+[debug]   > 
+[debug]   > by member reference: Set(exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.Expr...
+[debug] Initial set of included nodes: exercice.Expr
+[debug] Including exercice.sin by exercice.Expr
+[debug] Including exercice.Numbers by exercice.Expr
+[debug] Including exercice.cos by exercice.Expr
+[debug] Including exercice.X by exercice.Expr
+[debug] Including exercice.add by exercice.Expr
+[debug] Including exercice.mul by exercice.Expr
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.sin, exercice.Numbers, exercice.Expr, exercice.cos, exercice.X, exercice.add, exercice.mul)
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of main.main: [UsedName(Expr,[Default])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of main.main: [UsedName(Expr,[Default])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of main.main: [UsedName(Expr,[Default])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(Expr,[Default, PatMatTarget])]
+[debug] Change NamesChange(exercice.Expr,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(wait,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(Expr,[Default]), UsedName(toString,[Default]), UsedName(ne,[Default]))) invalidates 9 classes due to The exercice.Expr has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(equals,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(wait,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(finalize,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(Expr,[Default]), UsedName(toString,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.sin, exercice.Numbers, exercice.Expr, exercice.cos, exercice.X, exercice.add, exercice.mul)
+[debug]   > 
+[debug]   > by member reference: Set(main.main, exercice.Functions)
+[debug]         
+[debug] Invalidating (transitively) by inheritance from exercice.add...
+[debug] Initial set of included nodes: exercice.add
+[debug] Invalidated by transitive inheritance dependency: Set(exercice.add)
+[debug] The following modified names cause invalidation of main.main: [UsedName(add,[Default]), UsedName(apply,[Default]), UsedName(val1,[Default])]
+[debug] The following modified names cause invalidation of exercice.Functions: [UsedName(toString,[Default]), UsedName(asInstanceOf,[Default]), UsedName(isInstanceOf,[Default]), UsedName(add,[Default]), UsedName(val1,[Default]), UsedName(val2,[Default]), UsedName(==,[Default])]
+[debug] Change NamesChange(exercice.add,ModifiedNames(changes = UsedName(notifyAll,[Default]), UsedName(add,[Default]), UsedName(equals,[Default]), UsedName(exercice;add;init;,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(curried,[Default]), UsedName(wait,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(copy$default$2,[Default]), UsedName(clone,[Default]), UsedName(tupled,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]))) invalidates 3 classes due to The exercice.add has the following regular definitions changed:
+[debug] 	UsedName(notifyAll,[Default]), UsedName(add,[Default]), UsedName(equals,[Default]), UsedName(exercice;add;init;,[Default]), UsedName(copy$default$1,[Default]), UsedName(val1,[Default]), UsedName(isInstanceOf,[Default]), UsedName(productElement,[Default]), UsedName(productArity,[Default]), UsedName(notify,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(productPrefix,[Default]), UsedName(apply,[Default]), UsedName(curried,[Default]), UsedName(wait,[Default]), UsedName(val2,[Default]), UsedName(copy,[Default]), UsedName(productIterator,[Default]), UsedName(asInstanceOf,[Default]), UsedName(getClass,[Default]), UsedName(copy$default$2,[Default]), UsedName(clone,[Default]), UsedName(tupled,[Default]), UsedName(finalize,[Default]), UsedName(unapply,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(==,[Default]), UsedName(hashCode,[Default]), UsedName(canEqual,[Default]), UsedName(toString,[Default]), UsedName($init$,[Default]), UsedName(ne,[Default]).
+[debug]   > by transitive inheritance: Set(exercice.add)
+[debug]   > 
+[debug]   > by member reference: Set(main.main, exercice.Functions)
+[debug]         
+[debug] New invalidations:
+[debug] Initial set of included nodes: 
+[debug] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] Final step, transitive dependencies:
+[debug] 	Set()
+[debug] No classes were invalidated.
+[debug] Scala compilation took 2.6628603 s
 [info] done compiling
