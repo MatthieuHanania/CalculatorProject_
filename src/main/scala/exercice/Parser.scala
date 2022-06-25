@@ -22,8 +22,12 @@ object Parser extends JavaTokenParsers {
   def Cos:Parser[Expr] = "cos("~>Form<~")" ^^ {x:Expr=>cos(x)}
   def Sin:Parser[Expr] = "sin("~>Form<~")" ^^ {x:Expr=>sin(x)}
 
-  def testBigParser: Unit ={
-    //transform(parseAll(Form,"(2+X)*5+cos(3)").get)
-    println(parseAll(Form,"cos(5+3*X)").get)
+  def testBigParser(): Unit ={
+    try {
+      println(parseAll(Form,"cos(X+cos(10*2))").get)
+    } catch {
+      case e : Exception => println("Error with this function")
+    }
   }
 }
+

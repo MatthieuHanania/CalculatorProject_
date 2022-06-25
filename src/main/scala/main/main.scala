@@ -1,6 +1,6 @@
 package main
 import exercice._
-import exercice.Functions.{eval, showExpr, simplify}
+import exercice.Functions.{derivate, eval, showExpr, simplify}
 import exercice.Parser._
 import exercice.SimpleParser._
 import exercice.TestParser.testParser
@@ -25,15 +25,22 @@ object main extends App{
   val cos1 = cos(add(Numbers(4), add(Numbers(1),Numbers(2)) ))
   val cos2 = cos(add(X, add(Numbers(1),Numbers(2)) ))
   val cos3 = cos(add(add(X,Numbers(2)), add(Numbers(1),Numbers(2)) ))
+  val cos4 = cos(mul(Numbers(4),X))
 
+  val sin1 = sin(mul(Numbers(4),X))
+
+  val function2Test = cos2
   println("final : "+ showExpr(simplify(
-    cos3
+    function2Test
   )))
-  println("eval"+eval( simplify(cos3) )(x=3) )
+  println("derivate : "+ showExpr(derivate(simplify(
+    function2Test
+  ))))
+  println("derivate & Simplify : "+ showExpr(simplify(derivate(simplify(
+    function2Test
+  )))))
+  println("\n\neval"+eval( simplify(function2Test) )(x=3) )
 
-  //println(test)
-
-  //println(testParser)
-  println(testBigParser)
+  println(testBigParser())
 
 }

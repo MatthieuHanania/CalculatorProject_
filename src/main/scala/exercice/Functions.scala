@@ -35,6 +35,22 @@ object Functions {
     }
   }
 
+  def derivate(e:Expr):Expr={
+    e match {
+      case Numbers(value) =>Numbers(0)
+      case X => Numbers(1)
+      case mul(Numbers(a),Numbers(b)) => derivate(Numbers(a*b))
+      case mul(X,expr) =>expr
+
+      case add(a,b) => add(derivate(a),derivate(b))
+      case mul(a,b) => add(mul(derivate(a),b), mul(derivate(b),a))
+
+      case cos(expr) => mul(derivate(expr),mul(Numbers(-1),sin(expr)))
+      case sin(expr) => mul(derivate(expr),cos(derivate(expr)))
+
+
+    }
+  }
 
   def simplify(e: Expr): Expr={
     e match {
@@ -51,12 +67,8 @@ object Functions {
       case add(val1,val2) =>simplify(add(simplify(val1),simplify(val2)))
 
       case mul(Numbers(val1),Numbers(val2)) =>Numbers(val1*val2)
-      case mul (Numbers(0),val2)=>
-        print("cc")
-        Numbers(0)
-      case mul (val1,Numbers(0)) =>
-        print("ccd")
-        Numbers(0)
+      case mul (Numbers(0),val2)=>Numbers(0)
+      case mul (val1,Numbers(0)) =>Numbers(0)
       case mul(X, val2 : Numbers) if val2.value==1 => X
       case mul(X, val2 : Numbers) if val2.value==0 => Numbers(0)
       case mul(X, val2 : Numbers) =>mul(X,val2)
@@ -72,10 +84,8 @@ object Functions {
       case cos(X) => cos(X)
       case cos(Numbers(a)) => Numbers(math.sin(a))
       case cos(val1) => cos(simplify(val1))
-
     }
   }
-
 
 
 }

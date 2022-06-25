@@ -2,27 +2,27 @@
 [debug] IncrementalCompile.incrementalCompile
 [debug] previous = Stamps for: 42 products, 9 sources, 3 libraries
 [debug] current source = Set(${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/exercice/TestParser.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala, ${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/exercice/SimpleParser.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala, ${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
-[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/exercice/Parser.scala), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/main/main.scala), unmodified = ...),Set(),Set(),API Changes: Set())
 [debug] 
 [debug] Initial source changes:
 [debug] 	removed: Set()
 [debug] 	added: Set()
-[debug] 	modified: Set(${BASE}/src/main/scala/exercice/Parser.scala)
+[debug] 	modified: Set(${BASE}/src/main/scala/main/main.scala)
 [debug] Invalidated products: Set()
 [debug] External API changes: API Changes: Set()
 [debug] Modified binary dependencies: Set()
-[debug] Initial directly invalidated classes: Set(exercice.Parser)
+[debug] Initial directly invalidated classes: Set(main.main)
 [debug] Sources indirectly invalidated by:
 [debug] 	product: Set()
 [debug] 	binary dep: Set()
 [debug] 	external source: Set()
-[debug] All initially invalidated classes: Set(exercice.Parser)
-[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/exercice/Parser.scala)
-[debug] Initial set of included nodes: exercice.Parser
+[debug] All initially invalidated classes: Set(main.main)
+[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/main/main.scala)
+[debug] Initial set of included nodes: main.main
 [debug] compilation cycle 1
 [info] compiling 1 Scala source to D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes ...
 [debug] Getting org.scala-sbt:compiler-bridge_2.12:1.6.0:compile for Scala 2.12.15
-[debug] [zinc] Running cached compiler 318fd700 for Scala compiler version 2.12.15
+[debug] [zinc] Running cached compiler 538cf807 for Scala compiler version 2.12.15
 [debug] [zinc] The Scala compiler is invoked with:
 [debug] 	-bootclasspath
 [debug] 	C:\Users\Matthieu\.sbt\boot\scala-2.12.15\lib\scala-library.jar
@@ -34,5 +34,5 @@
 [debug] Final step, transitive dependencies:
 [debug] 	Set()
 [debug] No classes were invalidated.
-[debug] Scala compilation took 0.5605139 s
+[debug] Scala compilation took 0.2333237 s
 [info] done compiling
