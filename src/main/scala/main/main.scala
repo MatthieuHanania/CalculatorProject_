@@ -1,8 +1,11 @@
 package main
 import exercice._
 import exercice.Functions.{eval, showExpr, simplify}
+import exercice.Parser._
+import exercice.SimpleParser._
+import exercice.TestParser.testParser
 
-object main extends App {
+object main extends App{
 
   val add1 = add(Numbers(4), add(Numbers(1),Numbers(2)) )
   val add2 = add(X, Numbers(2))
@@ -23,10 +26,14 @@ object main extends App {
   val cos2 = cos(add(X, add(Numbers(1),Numbers(2)) ))
   val cos3 = cos(add(add(X,Numbers(2)), add(Numbers(1),Numbers(2)) ))
 
-  print("final : "+ showExpr(simplify(
+  println("final : "+ showExpr(simplify(
     cos3
   )))
-  print("eval"+eval( simplify(cos3) )(x=3) )
+  println("eval"+eval( simplify(cos3) )(x=3) )
 
+  //println(test)
+
+  //println(testParser)
+  println(testBigParser)
 
 }
