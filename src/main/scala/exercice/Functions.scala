@@ -40,6 +40,7 @@ object Functions {
       case Numbers(value) =>Numbers(0)
       case X => Numbers(1)
       case mul(Numbers(a),Numbers(b)) => derivate(Numbers(a*b))
+      case mul(X,X) => mul(Numbers(2),X)
       case mul(X,expr) =>expr
 
       case add(a,b) => add(derivate(a),derivate(b))
@@ -58,6 +59,7 @@ object Functions {
       case Numbers(a) => Numbers(a)
       case X => X
 
+
       case add(Numbers(val1),Numbers(val2)) =>Numbers(val1+val2)
       case add(X, val2 : Numbers) if val2.value==0 => X
       case add(X, val2 : Numbers) =>add(X,val2)
@@ -67,22 +69,23 @@ object Functions {
       case add(val1,val2) =>simplify(add(simplify(val1),simplify(val2)))
 
       case mul(Numbers(val1),Numbers(val2)) =>Numbers(val1*val2)
-      case mul (Numbers(0),val2)=>Numbers(0)
-      case mul (val1,Numbers(0)) =>Numbers(0)
+      case mul (Numbers(0),_)=>Numbers(0)
+      case mul (_,Numbers(0)) =>Numbers(0)
       case mul(X, val2 : Numbers) if val2.value==1 => X
-      case mul(X, val2 : Numbers) if val2.value==0 => Numbers(0)
+      //case mul(X, val2 : Numbers) if val2.value==0 => Numbers(0)
       case mul(X, val2 : Numbers) =>mul(X,val2)
       case mul(X,val2 :Expr) =>mul(X,simplify(val2))
       case mul(val1,X) =>mul(X,simplify(val1))
       case mul(val1,val2) if showExpr(val1).contains('X') || showExpr(val2).contains('X') =>mul(simplify(val1),simplify(val2))
       case mul(val1,val2) =>simplify(mul(simplify(val1),simplify(val2)))
 
+
       case sin(X) => sin(X)
-      case sin(Numbers(a)) =>Numbers(math.cos(a))
+      case sin(Numbers(a)) =>Numbers(math.sin(a))
       case sin(val1) => sin(simplify(val1))
 
       case cos(X) => cos(X)
-      case cos(Numbers(a)) => Numbers(math.sin(a))
+      case cos(Numbers(a)) => Numbers(math.cos(a))
       case cos(val1) => cos(simplify(val1))
     }
   }
