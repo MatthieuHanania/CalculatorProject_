@@ -1,38 +1,37 @@
 [debug] [zinc] IncrementalCompile -----------
 [debug] IncrementalCompile.incrementalCompile
 [debug] previous = Stamps for: 42 products, 9 sources, 3 libraries
-[debug] current source = Set(${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/exercice/TestParser.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala, ${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/exercice/SimpleParser.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala, ${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
-[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/exercice/Functions.scala), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] current source = Set(${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/simpleGUI/Point.scala, ${BASE}/src/main/scala/simpleGUI/Dart.scala, ${BASE}/src/main/scala/simpleGUI/simpleGUI.scala, ${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/simpleGUI/Point.scala, ${BASE}/src/main/scala/simpleGUI/simpleGUI.scala), removed = Set(${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/exercice/TestParser.scala, ${BASE}/src/main/scala/exercice/SimpleParser.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala), changed = Set(${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/exercice/Functions.scala), unmodified = ...),Set(),Set(),API Changes: Set())
 [debug] 
 [debug] Initial source changes:
-[debug] 	removed: Set()
-[debug] 	added: Set()
-[debug] 	modified: Set(${BASE}/src/main/scala/exercice/Functions.scala)
+[debug] 	removed: Set(${BASE}/src/main/scala/main/main.scala, ${BASE}/src/main/scala/exercice/TestParser.scala, ${BASE}/src/main/scala/exercice/SimpleParser.scala, ${BASE}/src/main/scala/simpleGUI/SimpleGUI.scala)
+[debug] 	added: Set(${BASE}/src/main/scala/simpleGUI/Point.scala, ${BASE}/src/main/scala/simpleGUI/simpleGUI.scala)
+[debug] 	modified: Set(${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
 [debug] Invalidated products: Set()
 [debug] External API changes: API Changes: Set()
 [debug] Modified binary dependencies: Set()
-[debug] Initial directly invalidated classes: Set(exercice.Functions)
+[debug] Initial directly invalidated classes: Set(exercice.sin, exercice.Numbers, main.main, exercice.Expr, exercice.cos, simpleGUI.Canvas, exercice.SimpleParser, exercice.X, exercice.Functions, exercice.add, exercice.TestParser, simpleGUI.SimpleGUI, exercice.mul, exercice.Parser)
 [debug] Sources indirectly invalidated by:
 [debug] 	product: Set()
 [debug] 	binary dep: Set()
 [debug] 	external source: Set()
-[debug] All initially invalidated classes: Set(exercice.Functions)
-[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/exercice/Functions.scala)
-[debug] Initial set of included nodes: exercice.Functions
+[debug] All initially invalidated classes: Set(exercice.sin, exercice.Numbers, main.main, exercice.Expr, exercice.cos, simpleGUI.Canvas, exercice.SimpleParser, exercice.X, exercice.Functions, exercice.add, exercice.TestParser, simpleGUI.SimpleGUI, exercice.mul, exercice.Parser)
+[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/exercice/Parser.scala, ${BASE}/src/main/scala/simpleGUI/Point.scala, ${BASE}/src/main/scala/simpleGUI/simpleGUI.scala, ${BASE}/src/main/scala/exercice/Expr.scala, ${BASE}/src/main/scala/simpleGUI/Canvas.scala, ${BASE}/src/main/scala/exercice/Functions.scala)
+[debug] Initial set of included nodes: exercice.sin, exercice.Numbers, main.main, exercice.Expr, exercice.cos, simpleGUI.Canvas, exercice.SimpleParser, exercice.X, exercice.Functions, exercice.add, exercice.TestParser, simpleGUI.SimpleGUI, exercice.mul, exercice.Parser
+[debug] Including exercice.cos by exercice.Expr
+[debug] Including exercice.X by exercice.Expr
+[debug] Including exercice.add by exercice.Expr
+[debug] Including exercice.mul by exercice.Expr
+[debug] Recompiling all sources: number of invalidated sources > 50.0% of all sources
 [debug] compilation cycle 1
-[info] compiling 1 Scala source to D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes ...
+[info] compiling 7 Scala sources to D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes ...
 [debug] Getting org.scala-sbt:compiler-bridge_2.12:1.6.0:compile for Scala 2.12.15
-[debug] [zinc] Running cached compiler 701cf49f for Scala compiler version 2.12.15
+[debug] [zinc] Running cached compiler 367f5936 for Scala compiler version 2.12.15
 [debug] [zinc] The Scala compiler is invoked with:
 [debug] 	-bootclasspath
 [debug] 	C:\Users\Matthieu\.sbt\boot\scala-2.12.15\lib\scala-library.jar
 [debug] 	-classpath
-[debug] 	D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-parser-combinators_2.12\2.1.1\scala-parser-combinators_2.12-2.1.1.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-swing_2.12\3.0.0\scala-swing_2.12-3.0.0.jar
-[debug] New invalidations:
-[debug] Initial set of included nodes: 
-[debug] Previously invalidated, but (transitively) depend on new invalidations:
-[debug] Final step, transitive dependencies:
-[debug] 	Set()
-[debug] No classes were invalidated.
-[debug] Scala compilation took 5.3616981 s
+[debug] 	D:\EFREI\M1\scala\CalculatorProject_\target\scala-2.12\classes;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-parser-combinators_2.12\2.1.1\scala-parser-combinators_2.12-2.1.1.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-swing_2.12\3.0.0\scala-swing_2.12-3.0.0.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\com\eed3si9n\sbt-assembly_2.12_1.0\1.2.0\sbt-assembly-1.2.0.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scalactic\scalactic_2.12\3.0.8\scalactic_2.12-3.0.8.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\com\eed3si9n\jarjarabrams\jarjar-abrams-core_2.12\1.8.1\jarjar-abrams-core_2.12-1.8.1.jar;C:\Users\Matthieu\.sbt\boot\scala-2.12.15\lib\scala-reflect.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\com\eed3si9n\jarjar\jarjar\1.8.1\jarjar-1.8.1.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\ow2\asm\asm\9.2\asm-9.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\ow2\asm\asm-commons\9.2\asm-commons-9.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\ant\ant\1.9.9\ant-1.9.9.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\maven\maven-plugin-api\3.3.9\maven-plugin-api-3.3.9.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\ow2\asm\asm-tree\9.2\asm-tree-9.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\ow2\asm\asm-analysis\9.2\asm-analysis-9.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\ant\ant-launcher\1.9.9\ant-launcher-1.9.9.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\maven\maven-model\3.3.9\maven-model-3.3.9.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\apache\maven\maven-artifact\3.3.9\maven-artifact-3.3.9.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\eclipse\sisu\org.eclipse.sisu.plexus\0.3.2\org.eclipse.sisu.plexus-0.3.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\javax\enterprise\cdi-api\1.0\cdi-api-1.0.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\eclipse\sisu\org.eclipse.sisu.inject\0.3.2\org.eclipse.sisu.inject-0.3.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\codehaus\plexus\plexus-classworlds\2.5.2\plexus-classworlds-2.5.2.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\javax\annotation\jsr250-api\1.0\jsr250-api-1.0.jar;C:\Users\Matthieu\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\javax\inject\javax.inject\1\javax.inject-1.jar
+[debug] Scala compilation took 8.8636918 s
 [info] done compiling

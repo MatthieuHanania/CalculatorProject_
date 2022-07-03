@@ -1,59 +1,23 @@
 package simpleGUI
 
+import exercice.{Expr, Numbers}
+import exercice.Functions.{derivate, showExpr, simplify}
+import exercice.Parser.{addi, parseAll}
+
 import scala.swing._
 import scala.swing.BorderPanel.Position._
 import event._
-import java.awt.{ Color, Graphics2D }
+import java.awt.{Color, Graphics2D}
+import javax.swing.text.StyledEditorKit.BoldAction
 import scala.util.Random
+import java.awt.{Color, Graphics2D}
 
 object SimpleGUI extends SimpleSwingApplication {
 
-  def top = new MainFrame { // top is a required method
-    title = "A Sample Scala Swing GUI"
+  override def top: Frame = new MainFrame{
+    title = "Interface for the project"
 
-    // declare Components here
-    val label = new Label {
-      text = "I'm a big label!."
-      font = new Font("Ariel", java.awt.Font.ITALIC, 24)
-    }
-    val button = new Button {
-      text = "Throw!"
-      foreground = Color.blue
-      background = Color.red
-      borderPainted = true
-      enabled = true
-      tooltip = "Click to throw a dart"
-    }
-    val toggle = new ToggleButton { text = "Toggle" }
-    val checkBox = new CheckBox { text = "Check me" }
-    val textField = new TextField {
-      columns = 10
-      text = "Click on the target!"
-    }
-    val textArea = new TextArea {
-      text = "initial text\nline two"
-      background = Color.green
-    }
-    val canvas = new Canvas {
-      preferredSize = new Dimension(100, 100)
-    }
-    val gridPanel = new GridPanel(1, 2) {
-      contents += checkBox
-      contents += label
-      contents += textArea
-    }
-
-    // choose a top-level Panel and put components in it
-    // Components may include other Panels
-    contents = new BorderPanel {
-      layout(gridPanel) = North
-      layout(button) = West
-      layout(canvas) = Center
-      layout(toggle) = East
-      layout(textField) = South
-    }
-    size = new Dimension(300, 200)
-    menuBar = new MenuBar {
+    menuBar = new MenuBar { //barre de menu avec la fenêtre exit
       contents += new Menu("File") {
         contents += new MenuItem(Action("Exit") {
           sys.exit(0)
@@ -61,24 +25,125 @@ object SimpleGUI extends SimpleSwingApplication {
       }
     }
 
-    // specify which Components produce events of interest
-    listenTo(button)
-    listenTo(toggle)
-    listenTo(canvas.mouse.clicks)
+    val label = new Label {
+      text = "Write your function just right here : f(x) ="
+      font = new Font("Calibri", java.awt.Font.ITALIC, 14)
+    }
+
+    val label_top = new Label {
+      text = "Type your expression !"
+      font = new Font("Calibri", java.awt.Font.BOLD, 30)
+    }
+
+
+    val button_draw = new Button {
+      text = "Draw the function"
+      foreground = Color.black
+      background = Color.white
+      enabled = true
+      tooltip = "Click to draw the function"
+    }
+
+    val button_simplify = new Button {
+      text = "Simplify the function"
+      foreground = Color.black
+      background = Color.white
+      enabled = true
+      tooltip = "Click to simplify the function"
+    }
+
+    val button_derivate = new Button {
+      text = "Derivate the function"
+      foreground = Color.black
+      background = Color.white
+      enabled = true
+      tooltip = "Click to derivate the function"
+    }
+
+    val button_delete = new Button {
+      text = "Erase the functions"
+      foreground = Color.black
+      background = Color.white
+      enabled = true
+      tooltip = "Click to erase the functions"
+    }
+
+    val textArea = new TextArea {
+      text = ""
+      background = Color.white
+    }
+
+    val gridPanel = new GridPanel(6,1) {
+      contents += label
+      contents += textArea
+      contents += button_draw
+      contents += button_simplify
+      contents += button_derivate
+      contents += button_delete
+    }
+
+    val canvas = new Canvas() { //là où va apparaître la fonction
+      preferredSize = new Dimension(1000, 600)
+    }
+
 
     // react to events
     reactions += {
-      case ButtonClicked(component) if component == button =>
-        val x = Random.nextInt(100)
-        val y = Random.nextInt(100)
-        val c = new Color(Random.nextInt(Int.MaxValue))
-        canvas.throwDart(new Dart(x, y, c))
-        textField.text = s"Dart thrown at $x, $y"
-      case ButtonClicked(component) if component == toggle =>
-        toggle.text = if (toggle.selected) "On" else "Off"
-      case MouseClicked(_, point, _, _, _) =>
-        canvas.throwDart(new Dart(point.x, point.y, Color.black))
-        textField.text = (s"You clicked in the Canvas at x=${point.x}, y=${point.y}.")
+      case ButtonClicked(component) if component == button_draw =>
+        try{
+          label_top.text = "The function is : "+showExpr(parseAll(addi, textArea.text).get)
+          canvas.drawfunction(parseAll(addi, textArea.text).get,new Color(Random.nextInt(Int.MaxValue)))
+        } catch {
+          case e : Exception => label_top.text = "There is an error in your expression"
+            repaint()
+        }
+
+      case ButtonClicked(component) if component == button_simplify =>
+        try{
+          label_top.text = "The simplified is : "+showExpr(simplify(parseAll(addi, textArea.text).get))
+          textArea.text = showExpr(simplify(parseAll(addi, textArea.text).get))
+          canvas.drawfunction(simplify(parseAll(addi, textArea.text).get),new Color(Random.nextInt(Int.MaxValue)))
+        } catch {
+          case e : Exception => label_top.text = "There is an error in your expression"
+            repaint()
+        }
+
+      case ButtonClicked(component) if component == button_derivate =>
+        try{
+          label_top.text = "The derivated is : "+showExpr(simplify(simplify(derivate(parseAll(addi, textArea.text).get))))
+          canvas.drawfunction(simplify(simplify(derivate(parseAll(addi, textArea.text).get))),new Color(Random.nextInt(Int.MaxValue)))
+        } catch {
+          case e : Exception => label_top.text = "There is an error in your expression"
+            repaint()
+        }
+
+      case ButtonClicked(component) if component == button_delete =>
+        try{
+          label_top.text = "Functions got erased"
+          canvas.viderlaliste()
+          repaint()
+        } catch {
+          case e : Exception => label_top.text = "Error"
+            repaint()
+        }
+
     }
+
+    size = new Dimension(1000,600) //taille de la fenêtre
+    centerOnScreen
+
+    listenTo(button_draw)
+    listenTo(button_simplify)
+    listenTo(button_derivate)
+    listenTo(button_delete)
+
+    // choose a top-level Panel and put components in it
+    // Components may include other Panels
+    contents = new BorderPanel {
+      layout(gridPanel) = South
+      layout(canvas) = Center
+      layout(label_top) = North
+    }
+
   }
 }

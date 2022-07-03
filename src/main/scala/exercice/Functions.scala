@@ -47,8 +47,7 @@ object Functions {
       case mul(a,b) => add(mul(derivate(a),b), mul(derivate(b),a))
 
       case cos(expr) => mul(derivate(expr),mul(Numbers(-1),sin(expr)))
-      case sin(expr) => mul(derivate(expr),cos(derivate(expr)))
-
+      case sin(expr) => mul(derivate(expr),cos(expr))
 
     }
   }
