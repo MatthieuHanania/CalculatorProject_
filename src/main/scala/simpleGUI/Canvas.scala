@@ -29,10 +29,6 @@ class Canvas extends Panel {
     g.setColor(new Color(255,255,255))
     g.fill(new Rectangle2D.Double(0,100,1000,500))
 
-    //g.setColor(new Color(255,255,255))
-    //g.draw(new Line2D.Double(100,100,100,100)                 // left border
-    //g.drawLine(0,50,1000,50)
-
     //Horizontal lines
     for(i <-100 to 600 by 30) {
       g.drawLine(0,i,1000,i)
@@ -50,6 +46,9 @@ class Canvas extends Panel {
     //Center
     g.setColor(new Color(255,0,0))
     g.drawLine(0,Y_CENTER,1000,Y_CENTER) //horizontal
+    g.drawLine(0,Y_CENTER+1,1000,Y_CENTER+1)
+
+    g.drawLine(X_CENTER+1,100,X_CENTER+1,600)
     g.drawLine(X_CENTER,100,X_CENTER,600)
 
 

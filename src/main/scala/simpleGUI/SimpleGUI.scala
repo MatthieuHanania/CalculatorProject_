@@ -1,16 +1,13 @@
 package simpleGUI
 
-import exercice.{Expr, Numbers}
 import exercice.Functions.{derivate, showExpr, simplify}
 import exercice.Parser.{addi, parseAll}
 
 import scala.swing._
 import scala.swing.BorderPanel.Position._
 import event._
-import java.awt.{Color, Graphics2D}
-import javax.swing.text.StyledEditorKit.BoldAction
 import scala.util.Random
-import java.awt.{Color, Graphics2D}
+import java.awt.{Color}
 
 object SimpleGUI extends SimpleSwingApplication {
 
@@ -83,7 +80,8 @@ object SimpleGUI extends SimpleSwingApplication {
     }
 
     val canvas = new Canvas() { //là où va apparaître la fonction
-      preferredSize = new Dimension(1000, 600)
+      preferredSize = new Dimension(1000, 550)
+      resizable = false //Can change the window size
     }
 
 
@@ -121,6 +119,7 @@ object SimpleGUI extends SimpleSwingApplication {
         try{
           label_top.text = "Functions got erased"
           canvas.viderlaliste()
+          textArea.text = ""
           repaint()
         } catch {
           case e : Exception => label_top.text = "Error"
@@ -129,7 +128,7 @@ object SimpleGUI extends SimpleSwingApplication {
 
     }
 
-    size = new Dimension(1000,600) //taille de la fenêtre
+    size = new Dimension(1000,550) //taille de la fenêtre
     centerOnScreen
 
     listenTo(button_draw)

@@ -1,10 +1,10 @@
 package exercice
 
 import scala.util.parsing.combinator._
-//cos(2*x)
-//(4*x)+(2*x*2*2*)
+
 object Parser extends JavaTokenParsers {
 
+  // For the parser, we set * as a priority in the calculations.
   def addi:Parser[Expr] = multi ~ rep("+"~ multi)^^{
     case t1~lst => lst.foldLeft(t1){
       case(a,_ ~b) => add(a,b)
